@@ -1,8 +1,8 @@
 function Header() {
   return (
-    <div className="w-full py-4 px-8 font-sans">
-      <ul className="flex items-center justify-between">
-        <li className="font-bold px-4">Logo</li>
+    <div className="w-full pt-4 px-8 font-sans">
+      <ul className="flex items-center justify-between text-lg">
+        <li className="font-bold px-4 text-2xl font-size">Yukta Bande</li>
         <div className="flex space-x-6">
           <li>
             <a

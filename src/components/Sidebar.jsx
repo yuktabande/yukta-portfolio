@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import UserCircleGear from "../assets/UserCircleGear.png";
 import Code from "../assets/Code.png";
 import Confetti from "../assets/Confetti.png";
@@ -14,23 +15,41 @@ const icons = [
 ];
 
 function Sidebar() {
-  const [selected, setSelected] = useState(0);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const paths = [
+    "/aboutme",
+    "/projects",
+    "/currently",
+    "/achievements",
+    "/skills",
+  ];
+
+  const [selected, setSelected] = useState(() => {
+    const initialIndex = paths.indexOf(location.pathname);
+    return initialIndex === -1 ? 0 : initialIndex;
+  });
 
   return (
-    <div
-      className="fixed bottom-1/2 left-4 h-2/5 w-18 rounded-full flex flex-col items-center justify-between shadow-lg"
-      style={{ backgroundColor: "#602BF8" }}
-    >
-      <div className="flex flex-col mt-4 items-center space-y-2 w-full">
+    <div className="fixed left-4 top-1/2 -translate-y-1/2 bg-[#602BF8] rounded-full flex flex-col items-center min-w-fit py-4 px-2 shadow-lg">
+      <div className="flex flex-col items-center gap-y-2">
         {icons.map((icon, idx) => (
           <button
             key={icon.alt}
             className={`p-2 rounded-full transition ${
-              selected === idx ? "bg-white" : "hover:bg-violet-200"
+              selected === idx ? "bg-[#3B1A9B]" : "hover:bg-[#3B1A9B]"
             }`}
-            onClick={() => setSelected(idx)}
+            onClick={() => {
+              setSelected(idx);
+              navigate(paths[idx]);
+            }}
           >
-            <img src={icon.src} alt={icon.alt} className="w-8 h-8" />
+            <img
+              src={icon.src}
+              alt={icon.alt}
+              className="w-8 h-8 filter invert brightness-200"
+            />
           </button>
         ))}
       </div>
