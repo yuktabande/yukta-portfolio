@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 function Card({
   title,
   value,
-  icon,
   chartType,
   maxValue = 100,
   progressLabel,
@@ -24,7 +23,6 @@ function Card({
     <div className="p-4 bg-white rounded-xl shadow-md w-full h-60 flex flex-col justify-between">
       <div className="flex justify-between items-center">
         <div className="text-sm text-gray-500 font-semibold">{title}</div>
-        {icon && <div className="text-lg">{icon}</div>}
       </div>
 
       <div className="text-3xl font-bold">{value}</div>
@@ -96,14 +94,8 @@ function Card({
 
       {chartType === "bar" && (
         <div className="w-full flex flex-col gap-2">
-          {/* Top row: Title + Icon */}
-          <div className="flex justify-between items-center">
-            <span className="text-sm font-semibold text-gray-700">{title}</span>
-            {icon && <img src={icon} alt="icon" className="w-5 h-5" />}
-          </div>
-
           {/* Middle: Big Number */}
-          <div className="text-3xl font-bold text-right text-gray-800">
+          <div className="text-4xl md:text-5xl font-bold text-right text-gray-800">
             {value}
           </div>
 
