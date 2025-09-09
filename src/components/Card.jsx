@@ -7,6 +7,7 @@ function Card({
   maxValue = 100,
   progressLabel,
   progressColor = "#602BF8",
+  hobbies = [],
 }) {
   const [animatedPercentage, setAnimatedPercentage] = useState(0);
   const percentage = Math.min((value / maxValue) * 100, 100);
@@ -117,6 +118,16 @@ function Card({
           <div className="text-xs text-right font-medium text-gray-500">
             {progressLabel}
           </div>
+        </div>
+      )}
+
+      {title === "My Hobbies" && hobbies.length > 0 && (
+        <div className="grid grid-cols-2 gap-4 justify-items-center">
+          {hobbies.map((icon, index) => (
+            <div key={index} className="w-10 h-10">
+              {icon}
+            </div>
+          ))}
         </div>
       )}
     </div>

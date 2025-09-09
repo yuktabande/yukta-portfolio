@@ -4,3 +4,11 @@
 body {
   font-family: "Aileron", ui-sans-serif, system-ui, sans-serif;
 }
+
+.perspective {
+  perspective: 1000px;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

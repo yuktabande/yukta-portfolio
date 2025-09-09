@@ -23,24 +23,28 @@ function Currently() {
       {/* Top Half - Cards */}
       <div className="h-1/2 flex flex-col md:flex-row justify-center items-center gap-8 pr-0 md:pr-12">
         <Card
-          title="TOTAL REPOSITORIES"
-          value={data.totalRepos}
+          title="BRAIN TUMOR DETECTION"
+          value={70}
           chartType="bar"
-          maxValue={80}
-          progressLabel="Repository Goal"
+          maxValue={100}
+          progressLabel="Goal"
           progressColor="#602BF8"
         />
         <Card
-          title="Ongoing Streak"
-          value={27}
-          chartType="radial"
+          title="AGENTIC AI"
+          value={97}
+          chartType="bar"
           maxValue={100}
+          progressLabel="Goal"
+          progressColor="#602BF8"
         />
         <Card
-          title="Profile Visits"
-          value={456}
+          title="PROMPT TOOL"
+          value={2}
           chartType="bar"
-          maxValue={800}
+          maxValue={100}
+          progressLabel="Goal"
+          progressColor="#602BF8"
         />
       </div>
 
